@@ -21,7 +21,6 @@ The complete project documentation and implementation details are divided into t
 
 ```text
 streaming-media-knowledge-graph-llm/
-│── README.md                                 # Detailed Repository Architecture & Research Findings
 │── Knowledge Graph Final Project - Netflix.pdf # Main academic research report (Parts 1-4)
 │── Appendices - Netflix.pdf                  # Comprehensive appendices (Models, Cypher, AI Free-Text, SPARQL)
 │── Gemini_KG.ttl                             # Gemini Baseline Ontology & Triples (Appendix A)
@@ -29,7 +28,8 @@ streaming-media-knowledge-graph-llm/
 │── ChatGPT_KG.ttl                            # ChatGPT Expanded Ontology & Triples (Appendix C)
 │── Gemini_KG.png                             # Gemini Knowledge Graph Topology (Figure 3.1)
 │── Perplexity_KG.png                         # Perplexity Knowledge Graph Topology (Figure 3.2)
-└── ChatGPT_KG.png                            # ChatGPT Knowledge Graph Topology (Figure 3.3)
+│── ChatGPT_KG.png                            # ChatGPT Knowledge Graph Topology (Figure 3.3)
+└── README.md                                 # Detailed Repository Architecture & Research Findings
 
 ```
 
