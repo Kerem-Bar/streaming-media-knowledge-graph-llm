@@ -37,7 +37,7 @@ streaming-media-knowledge-graph-llm/
 
 ## 🧬 Ontological Architecture & Tool Comparison
 
-As documented in Part 1 and Part 2 of Knowledge Graph Final Project - Netflix.pdf, the study evaluates three distinct GenAI architectures built from a standardized initial prompt to model the cultural, geopolitical, and behavioral impacts of global streaming platforms versus traditional media. Each model was required to enforce strict ontological criteria: a 3-level IS-A class hierarchy, at least 20 classes and sub-classes, 20 Data Properties, 20 Object Properties, 20 specific instances, and 20 Knowledge Graph triples. 
+As documented in **Part 1** and **Part 2** of Knowledge Graph Final Project - Netflix.pdf, the study evaluates three distinct GenAI architectures built from a standardized initial prompt to model the cultural, geopolitical, and behavioral impacts of global streaming platforms versus traditional media. Each model was required to enforce strict ontological criteria: a 3-level IS-A class hierarchy, at least 20 classes and sub-classes, 20 Data Properties, 20 Object Properties, 20 specific instances, and 20 Knowledge Graph triples. 
 
 To evaluate how effectively each Large Language Model translated these research requirements into structured knowledge, the execution results across the three architectures compare as follows:
 
