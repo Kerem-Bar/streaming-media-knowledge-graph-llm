@@ -35,11 +35,9 @@ streaming-media-knowledge-graph-llm/
 
 ---
 
-## 🧬 Ontological Architecture & Tool Comparison
+🧬 Ontological Architecture & Tool Comparison
 
-As documented in Part 1 and Part 2 of *Knowledge Graph Final Project - Netflix.pdf*, the study evaluates three distinct GenAI architectures built to model the cultural, geopolitical, and behavioral impacts of global streaming platforms versus traditional media. Each model was generated from a standardized initial prompt enforcing strict ontological criteria: a 3-level IS-A class hierarchy, at least 20 classes and sub-classes, 20 Data Properties, 20 Object Properties, 20 specific instances, and 20 Knowledge Graph triples.
-
-To evaluate how effectively different language models translate these research requirements into structured knowledge, the study compares the execution results across three distinct architectures:
+As documented in Part 1 and Part 2 of Knowledge Graph Final Project - Netflix.pdf, the study evaluates three distinct GenAI architectures built from a standardized initial prompt enforcing strict ontological criteria: a 3-level IS-A class hierarchy, at least 20 classes and sub-classes, 20 Data Properties, 20 Object Properties, 20 specific instances, and 20 Knowledge Graph triples.
 
 * **Gemini (Model 1):** Maintained precise single-turn adherence to all numeric and taxonomic constraints without scope creep, producing a balanced, ready-to-implement baseline knowledge graph containing exactly 23 classes and sub-classes organized across 5 core main branches.
 * **Perplexity / Sonar 2 (Model 2):** Highlighted the necessity of iterative prompt engineering. Its initial generation comprised 23 classes and sub-classes structured across 7 main branches, but suffered from a *Predicate Redundancy Error* (repeatedly reusing `platformDistributesContent`). Since a knowledge graph requires diverse relationships to properly analyze multi-faceted geopolitical and social impacts, this was successfully resolved by using a targeted negative constraint in a second prompt ("do not repeat any object property") to ensure relational richness.
