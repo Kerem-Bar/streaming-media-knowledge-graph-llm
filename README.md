@@ -58,7 +58,7 @@ As detailed in **Part 3** of `Knowledge Graph Final Project - Netflix.pdf` and d
   Neo4j successfully traverses this explicit path, yielding exact, deterministic records with zero deviation that align seamlessly with the AI's semantic free-text synthesis.
 
 * **Scenario B: Path Disconnection (Zero Records & Bounded Precision)**  
-  When an ontology suffers from structural gaps or disjoint schema paths where the multi-hop chain fails to bridge to the target node, the traversal breaks. For instance, in Perplexity's regulatory query, the attempt to link countries, policies, and restricted content failed because the continuous path was disconnected (`Country` -> `GovernanceAndPolicy` -> missing direct content-blocking links). This results in zero records returned by the closed-world Neo4j database. However, the AI's free-text synthesis demonstrates robust contextual understanding by pivoting to available platform-level directives (e.g., `EU_AVMSD_Policy`) rather than producing false positives.
+  When an ontology suffers from structural gaps or disjoint schema paths where the multi-hop chain fails to bridge to the target node, the traversal breaks. For instance, in Perplexity's regulatory query, the attempt to link countries, policies, and restricted content failed because the continuous path was disconnected (`Country` -> `GovernanceAndPolicy` -> missing direct content-blocking links). This results in zero records returned by the closed-world Neo4j database. However, the AI's free-text synthesis demonstrates robust contextual understanding by pivoting to available platform-level directives present in the knowledge graph (e.g., `EU_AVMSD_Policy`) rather than hallucinating fictitious banned content items.
 ---
 
 ## 🌍 Wikidata SPARQL Benchmarking
