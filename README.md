@@ -27,12 +27,11 @@ streaming-media-knowledge-graph-llm/
 │   ├── Perplexity_KG.ttl            # Perplexity Fine-Tuned Ontology & Triples (Appendix B)[cite: 1]
 │   └── ChatGPT_KG.ttl               # ChatGPT Expanded Ontology & Triples (Appendix C)[cite: 1]
 │── /documentation                   # Core Project Files
-│   ├── Knowledge Graph Final Project.pdf # Main academic research report (Parts 1-4)[cite: 2]
+│   ├── Knowledge Graph Final Project.pdf # Main academic research report (Parts 1-4)
 │   └── Appendices.pdf               # Comprehensive appendices (Models, Cypher, AI Free-Text, SPARQL)[cite: 1]
-└── /images                          # High-Resolution Neo4j Visualizations
-    ├── Gemini_KG.png                # Gemini Knowledge Graph Topology (Figure 3.1)[cite: 2]
-    ├── Perplexity_KG.png            # Perplexity Knowledge Graph Topology (Figure 3.2)[cite: 2]
-    └── ChatGPT_KG.png               # ChatGPT Knowledge Graph Topology (Figure 3.3)[cite: 2]
+│── Gemini_KG.png                    # Gemini Knowledge Graph Topology (Figure 3.1)
+│── Perplexity_KG.png                # Perplexity Knowledge Graph Topology (Figure 3.2)
+└── ChatGPT_KG.png                   # ChatGPT Knowledge Graph Topology (Figure 3.3)[cite: 2]
 
 ```
 
@@ -86,10 +85,9 @@ As explored in **Part 4** of `Knowledge Graph Final Project.pdf` and **Appendix 
 ## 📊 Visualizations Highlights
 
 | Gemini Knowledge Graph (Fig 3.1) | Perplexity Knowledge Graph (Fig 3.2) | ChatGPT Knowledge Graph (Fig 3.3) |
-| --- | --- | --- |
-|  |  |  |
-| *20 nodes, 20 relationships (Censorship & Behavioral Focus).*<br> | *22 nodes, 20 relationships (Algorithmic & Policy Focus).*<br> | *21 core nodes, 19 key relationships (Soft Power & Global Scope).*<br> |
-
+| :---: | :---: | :---: |
+| <img src="Gemini_KG.png" width="100%"> | <img src="Perplexity_KG.png" width="100%"> | <img src="ChatGPT_KG.png" width="100%"> |
+| *20 nodes, 20 relationships (Censorship & Behavioral Focus).* | *22 nodes, 20 relationships (Algorithmic & Policy Focus).* | *21 core nodes, 19 key relationships (Soft Power & Global Scope).* |
 ---
 
 ## 🛠️ Tech Stack & Dependencies
