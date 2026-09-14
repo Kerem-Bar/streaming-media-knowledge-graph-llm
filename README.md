@@ -70,19 +70,19 @@ As explored in **Part 4** of `Knowledge Graph Final Project - Netflix.pdf` and *
 <p align="center">
   <img src="Gemini_KG.png" width="900">
 </p>
-<p align="center"><em>20 nodes, 20 relationships (Censorship & Behavioral Focus).</em></p>
+<p align="center"><em>20 nodes, 20 relationships (Focusing on Platform Content, Censorship, and Behavioral Impacts).</em></p>
 
 ### Figure 3.2: Perplexity Knowledge Graph
 <p align="center">
   <img src="Perplexity_KG.png" width="900">
 </p>
-<p align="center"><em>22 nodes, 20 relationships (Algorithmic & Policy Focus).</em></p>
+<p align="center"><em>22 nodes, 20 relationships (Focusing on Recommendation Algorithms and Regulatory Policies).</em></p>
 
 ### Figure 3.3: ChatGPT Knowledge Graph
 <p align="center">
   <img src="ChatGPT_KG.png" width="750">
 </p>
-<p align="center"><em>21 core nodes, 19 key relationships (Soft Power & Global Scope).</em></p>
+<p align="center"><em>21 core nodes, 19 key relationships (Focusing on Global Distribution and Cultural Impact).</em></p>
 
 ## 🛠️ Tech Stack & Dependencies
 
