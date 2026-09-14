@@ -53,10 +53,14 @@ Each model was required to enforce strict ontological criteria: a 3-level IS-A c
 As detailed in **Part 3** of `Knowledge Graph Final Project - Netflix.pdf` and demonstrated in **Appendices D & E** of `Appendices - Netflix.pdf`, multi-hop competency questions regarding content-driven conflicts, geopolitical regulations, and socio-behavioral impacts were evaluated across two parallel channels, manifesting either as **deterministic matches** (where graph paths and semantic text fully align) or **zero records / bounded precision** (where structural gaps cause Neo4j to return empty results while the AI maintains strict factual boundaries):
 
 * **Scenario A: Successful Multi-Hop Traversal (Deterministic Match)**  
-  When an ontology is precisely structured (e.g., Gemini's four-node path traversing from geographic regions through censorship policies and restricted content to the affected platform), Neo4j successfully executes multi-hop traversals ($A \rightarrow B \rightarrow C \rightarrow D$). This yields exact, deterministic records with zero deviation, which align seamlessly with the AI's semantic free-text synthesis.
+  When an ontology is precisely structured, queries execute continuous multi-hop traversals across interconnected nodes:  
+  `Geographic_Region` -> `State_Censorship` -> `Content_Item` -> `Media_Platform`  
+  In Gemini's model, Neo4j successfully traverses this explicit path (A -> B -> C -> D), yielding exact, deterministic records with zero deviation that align seamlessly with the AI's semantic free-text synthesis.
 
 * **Scenario B: Path Disconnection (Zero Records & Bounded Precision)**  
-  When an ontology suffers from structural gaps or disjoint schema paths (e.g., Perplexity's regulatory query), the multi-hop traversal fails to bridge the path to the target node, resulting in zero records returned by the closed-world Neo4j database. However, the AI's free-text synthesis demonstrates robust contextual understanding by bridging the gap through broader semantic reasoning rather than producing false positives.
+  When an ontology suffers from structural gaps or disjoint schema paths (e.g., Perplexity's regulatory query where the multi-hop path fails to bridge the target node), the traversal breaks:  
+  `Country` ↛ `Censorship_Policy` ↛ `Blocked_Content`  
+  This results in zero records returned by the closed-world Neo4j database. However, the AI's free-text synthesis demonstrates robust contextual understanding by pivoting to available platform-level directives (e.g., `EU_AVMSD_Policy`) rather than producing false positives.
 ---
 
 ## 🌍 Wikidata SPARQL Benchmarking
