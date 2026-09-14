@@ -68,19 +68,19 @@ As explored in **Part 4** of `Knowledge Graph Final Project - Netflix.pdf` and *
 
 ### Figure 3.1: Gemini Knowledge Graph
 <p align="center">
-  <img src="Gemini_KG.png" width="700">
+  <img src="Gemini_KG.png" width="900">
 </p>
 <p align="center"><em>20 nodes, 20 relationships (Censorship & Behavioral Focus).</em></p>
 
 ### Figure 3.2: Perplexity Knowledge Graph
 <p align="center">
-  <img src="Perplexity_KG.png" width="700">
+  <img src="Perplexity_KG.png" width="900">
 </p>
 <p align="center"><em>22 nodes, 20 relationships (Algorithmic & Policy Focus).</em></p>
 
 ### Figure 3.3: ChatGPT Knowledge Graph
 <p align="center">
-  <img src="ChatGPT_KG.png" width="700">
+  <img src="ChatGPT_KG.png" width="900">
 </p>
 <p align="center"><em>21 core nodes, 19 key relationships (Soft Power & Global Scope).</em></p>
 ---
