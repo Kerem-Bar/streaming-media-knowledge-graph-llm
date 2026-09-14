@@ -31,11 +31,13 @@ streaming-media-knowledge-graph-llm/
 │── Perplexity_KG.png                # Perplexity Knowledge Graph Topology (Figure 3.2)
 └── ChatGPT_KG.png                   # ChatGPT Knowledge Graph Topology (Figure 3.3)
 
+```
+
 ---
 
 ## 🧬 Ontological Architecture & Tool Comparison
 
-As documented in **Part 1 and Part 2** of `Knowledge Graph Final Project.pdf`, the study evaluates three distinct GenAI architectures built from a standardized initial prompt enforcing strict ontological criteria: a 3-level IS-A class hierarchy, at least 20 classes/sub-classes, 20 Data Properties, 20 Object Properties, 20 specific instances, and 20 Knowledge Graph triples.
+As documented in **Part 1 and Part 2** of `Knowledge Graph Final Project - Netflix.pdf`, the study evaluates three distinct GenAI architectures built from a standardized initial prompt enforcing strict ontological criteria: a 3-level IS-A class hierarchy, at least 20 classes/sub-classes, 20 Data Properties, 20 Object Properties, 20 specific instances, and 20 Knowledge Graph triples.
 
 * **Gemini (Model 1):** Maintained precise single-turn adherence to all numeric and taxonomic constraints without scope creep, producing a balanced, ready-to-implement baseline graph containing 23 classes across 5 core branches.
 * **Perplexity / Sonar 2 (Model 2):** Highlighted the necessity of iterative prompt engineering. Its initial generation suffered from a *Predicate Redundancy Error* (repeatedly reusing `platformDistributesContent`), which was successfully resolved using targeted negative constraints (*"do not repeat any object property"*).
@@ -45,7 +47,7 @@ As documented in **Part 1 and Part 2** of `Knowledge Graph Final Project.pdf`, t
 
 ## 🔍 Query Retrieval: Structured Cypher vs. AI Free-Text
 
-As detailed in **Part 3** of `Knowledge Graph Final Project.pdf` and demonstrated in **Appendices D & E** of `Appendices.pdf`, multi-hop competency questions regarding content-driven conflicts, geopolitical regulations, and socio-behavioral impacts were evaluated across two parallel channels:
+As detailed in **Part 3** of `Knowledge Graph Final Project - Netflix.pdf` and demonstrated in **Appendices D & E** of `Appendices - Netflix.pdf`, multi-hop competency questions regarding content-driven conflicts, geopolitical regulations, and socio-behavioral impacts were evaluated across two parallel channels:
 
 1. **Structured Neo4j Queries (Cypher):** Provided deterministic precision, auditable truth, and mathematical certainty over explicit graph topologies (though vulnerable to schema rigidity and join path mismatches).
 2. **Free-Text AI Prompts:** Offered semantic flexibility and contextual synthesis, though prone to drifting from strict graph boundaries when relationships were unmodeled.
@@ -54,7 +56,7 @@ As detailed in **Part 3** of `Knowledge Graph Final Project.pdf` and demonstrate
 
 ## 🌍 Wikidata SPARQL Benchmarking
 
-As explored in **Part 4** of `Knowledge Graph Final Project.pdf` and **Appendix F** of `Appendices.pdf`, closed-world findings were benchmarked against the open-world Wikidata ecosystem via the Wikidata Query Service across three core axes:
+As explored in **Part 4** of `Knowledge Graph Final Project - Netflix.pdf` and **Appendix F** of `Appendices - Netflix.pdf`, closed-world findings were benchmarked against the open-world Wikidata ecosystem via the Wikidata Query Service across three core axes:
 
 * **Cultural Distribution:** Contrasting corporate distribution and soft power in Neo4j against objective bibliographic metadata (country of origin, language) in Wikidata.
 * **Institutional Governance:** Contrasting active regulatory friction in closed graphs with formal legislative acts (AVMSD 2010, GDPR) in static legal ontologies.
@@ -62,23 +64,13 @@ As explored in **Part 4** of `Knowledge Graph Final Project.pdf` and **Appendix 
 
 ---
 
+## 📊 Visualizations Highlights
+
 ### Figure 3.1: Gemini Knowledge Graph
-<p align="center">
-  <img src="Gemini_KG.png" width="700">
-</p>
-<p align="center"><em>20 nodes, 20 relationships (Censorship & Behavioral Focus).</em></p>
 
 ### Figure 3.2: Perplexity Knowledge Graph
-<p align="center">
-  <img src="Perplexity_KG.png" width="700">
-</p>
-<p align="center"><em>22 nodes, 20 relationships (Algorithmic & Policy Focus).</em></p>
 
 ### Figure 3.3: ChatGPT Knowledge Graph
-<p align="center">
-  <img src="ChatGPT_KG.png" width="700">
-</p>
-<p align="center"><em>21 core nodes, 19 key relationships (Soft Power & Global Scope).</em></p>
 
 ---
 
