@@ -1,0 +1,125 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix gpt:  <http://example.org/chatgpt#> .
+
+<http://example.org/chatgpt> a owl:Ontology ;
+    rdfs:label "ChatGPT Comprehensive Media & Soft Power Ontology" .
+
+# --- Top Level Classes ---
+gpt:MediaEntity a owl:Class .
+gpt:MediaPlatform a owl:Class ; rdfs:subClassOf gpt:MediaEntity .
+gpt:GlobalStreamingPlatform a owl:Class ; rdfs:subClassOf gpt:MediaPlatform .
+gpt:RegionalStreamingPlatform a owl:Class ; rdfs:subClassOf gpt:MediaPlatform .
+gpt:SocialVideoPlatform a owl:Class ; rdfs:subClassOf gpt:MediaPlatform .
+gpt:TraditionalMediaOrganization a owl:Class ; rdfs:subClassOf gpt:MediaEntity .
+gpt:BroadcastTelevisionNetwork a owl:Class ; rdfs:subClassOf gpt:TraditionalMediaOrganization .
+gpt:CableTelevisionNetwork a owl:Class ; rdfs:subClassOf gpt:TraditionalMediaOrganization .
+gpt:PublicServiceBroadcaster a owl:Class ; rdfs:subClassOf gpt:TraditionalMediaOrganization .
+gpt:NewspaperOrganization a owl:Class ; rdfs:subClassOf gpt:TraditionalMediaOrganization .
+
+gpt:MediaContent a owl:Class .
+gpt:AudiovisualContent a owl:Class ; rdfs:subClassOf gpt:MediaContent .
+gpt:Film a owl:Class ; rdfs:subClassOf gpt:AudiovisualContent .
+gpt:TelevisionSeries a owl:Class ; rdfs:subClassOf gpt:AudiovisualContent .
+gpt:NewsProgram a owl:Class ; rdfs:subClassOf gpt:AudiovisualContent .
+
+gpt:Impact a owl:Class .
+gpt:CulturalImpact a owl:Class ; rdfs:subClassOf gpt:Impact .
+gpt:CulturalHomogenization a owl:Class ; rdfs:subClassOf gpt:CulturalImpact .
+gpt:CulturalHybridization a owl:Class ; rdfs:subClassOf gpt:CulturalImpact .
+gpt:GeopoliticalImpact a owl:Class ; rdfs:subClassOf gpt:Impact .
+gpt:SoftPowerImpact a owl:Class ; rdfs:subClassOf gpt:GeopoliticalImpact .
+gpt:BehavioralImpact a owl:Class ; rdfs:subClassOf gpt:Impact .
+gpt:BingeWatchingBehavior a owl:Class ; rdfs:subClassOf gpt:BehavioralImpact .
+gpt:AudienceFragmentation a owl:Class ; rdfs:subClassOf gpt:BehavioralImpact .
+gpt:EconomicImpact a owl:Class ; rdfs:subClassOf gpt:Impact .
+gpt:LocalProductionImpact a owl:Class ; rdfs:subClassOf gpt:EconomicImpact .
+
+gpt:Actor a owl:Class .
+gpt:InstitutionalActor a owl:Class ; rdfs:subClassOf gpt:Actor .
+gpt:RegulatoryAuthority a owl:Class ; rdfs:subClassOf gpt:InstitutionalActor .
+gpt:AudienceCommunity a owl:Class ; rdfs:subClassOf gpt:Actor .
+gpt:CulturalCommunity a owl:Class ; rdfs:subClassOf gpt:Actor .
+
+gpt:GeographicEntity a owl:Class .
+gpt:Country a owl:Class ; rdfs:subClassOf gpt:GeographicEntity .
+gpt:DemocraticCountry a owl:Class ; rdfs:subClassOf gpt:Country .
+
+gpt:Policy a owl:Class .
+gpt:MediaPolicy a owl:Class ; rdfs:subClassOf gpt:Policy .
+gpt:ContentQuotaPolicy a owl:Class ; rdfs:subClassOf gpt:MediaPolicy .
+
+gpt:Technology a owl:Class .
+gpt:AlgorithmicTechnology a owl:Class ; rdfs:subClassOf gpt:Technology .
+gpt:RecommendationAlgorithm a owl:Class ; rdfs:subClassOf gpt:AlgorithmicTechnology .
+gpt:AudienceMeasurementTechnology a owl:Class ; rdfs:subClassOf gpt:Technology .
+gpt:TelevisionRatingSystem a owl:Class ; rdfs:subClassOf gpt:AudienceMeasurementTechnology .
+
+# --- Object Properties ---
+gpt:distributesContent a owl:ObjectProperty ; rdfs:domain gpt:MediaPlatform ; rdfs:range gpt:MediaContent .
+gpt:ownsPlatform a owl:ObjectProperty ; rdfs:domain gpt:InstitutionalActor ; rdfs:range gpt:MediaPlatform .
+gpt:operatesInCountry a owl:ObjectProperty ; rdfs:domain gpt:MediaPlatform ; rdfs:range gpt:Country .
+gpt:targetsAudience a owl:ObjectProperty ; rdfs:domain gpt:MediaContent ; rdfs:range gpt:AudienceCommunity .
+gpt:usesTechnology a owl:ObjectProperty ; rdfs:domain gpt:MediaPlatform ; rdfs:range gpt:Technology .
+gpt:recommendsContent a owl:ObjectProperty ; rdfs:domain gpt:RecommendationAlgorithm ; rdfs:range gpt:MediaContent .
+gpt:causesImpact a owl:ObjectProperty ; rdfs:domain gpt:MediaEntity ; rdfs:range gpt:Impact .
+gpt:contentCausesImpact a owl:ObjectProperty ; rdfs:domain gpt:MediaContent ; rdfs:range gpt:Impact .
+gpt:influencesViewingBehavior a owl:ObjectProperty ; rdfs:domain gpt:MediaPlatform ; rdfs:range gpt:BehavioralImpact .
+gpt:servesAsSoftPowerFor a owl:ObjectProperty ; rdfs:domain gpt:MediaContent ; rdfs:range gpt:Country .
+gpt:exportsCulturalValuesTo a owl:ObjectProperty ; rdfs:domain gpt:MediaContent ; rdfs:range gpt:Country .
+gpt:representsCommunity a owl:ObjectProperty ; rdfs:domain gpt:MediaContent ; rdfs:range gpt:CulturalCommunity .
+gpt:regulatedBy a owl:ObjectProperty ; rdfs:domain gpt:MediaPlatform ; rdfs:range gpt:RegulatoryAuthority .
+gpt:appliesToPlatform a owl:ObjectProperty ; rdfs:domain gpt:Policy ; rdfs:range gpt:MediaPlatform .
+gpt:requiresLocalContent a owl:ObjectProperty ; rdfs:domain gpt:ContentQuotaPolicy ; rdfs:range gpt:MediaPlatform .
+gpt:competesWith a owl:ObjectProperty ; rdfs:domain gpt:MediaEntity ; rdfs:range gpt:MediaEntity .
+gpt:shapesPublicOpinionIn a owl:ObjectProperty ; rdfs:domain gpt:MediaEntity ; rdfs:range gpt:Country .
+gpt:measuredBy a owl:ObjectProperty ; rdfs:domain gpt:MediaContent ; rdfs:range gpt:AudienceMeasurementTechnology .
+
+# --- Selected Instances & Triples ---
+gpt:Netflix a gpt:GlobalStreamingPlatform .
+gpt:DisneyPlus a gpt:GlobalStreamingPlatform .
+gpt:YouTube a gpt:SocialVideoPlatform .
+gpt:BBCOne a gpt:PublicServiceBroadcaster .
+gpt:CNN a gpt:CableTelevisionNetwork .
+gpt:Kan11 a gpt:PublicServiceBroadcaster .
+gpt:SquidGame a gpt:TelevisionSeries .
+gpt:StrangerThings a gpt:TelevisionSeries .
+gpt:MoneyHeist a gpt:TelevisionSeries .
+gpt:TheCrown a gpt:TelevisionSeries .
+gpt:Fauda a gpt:TelevisionSeries .
+gpt:SouthKorea a gpt:DemocraticCountry .
+gpt:UnitedStates a gpt:DemocraticCountry .
+gpt:UnitedKingdom a gpt:DemocraticCountry .
+gpt:Israel a gpt:DemocraticCountry .
+gpt:EuropeanUnionMediaRegulator a gpt:RegulatoryAuthority .
+gpt:EuropeanContentQuota a gpt:ContentQuotaPolicy .
+gpt:NetflixRecommendationEngine a gpt:RecommendationAlgorithm .
+gpt:NielsenRatingSystem a gpt:TelevisionRatingSystem .
+gpt:KoreanWaveCommunity a gpt:CulturalCommunity .
+gpt:GlobalBingeWatchingGrowth a gpt:BingeWatchingBehavior .
+gpt:KoreanSoftPowerGrowth a gpt:SoftPowerImpact .
+gpt:LocalTelevisionAudienceFragmentation a gpt:AudienceFragmentation .
+gpt:NetflixInc a gpt:InstitutionalActor .
+
+gpt:NetflixInc gpt:ownsPlatform gpt:Netflix .
+gpt:Netflix gpt:operatesInCountry gpt:UnitedStates .
+gpt:Netflix gpt:operatesInCountry gpt:Israel .
+gpt:Netflix gpt:distributesContent gpt:SquidGame .
+gpt:Netflix gpt:distributesContent gpt:StrangerThings .
+gpt:Netflix gpt:distributesContent gpt:Fauda .
+gpt:SquidGame gpt:servesAsSoftPowerFor gpt:SouthKorea .
+gpt:Fauda gpt:exportsCulturalValuesTo gpt:UnitedStates .
+gpt:SquidGame gpt:representsCommunity gpt:KoreanWaveCommunity .
+gpt:SquidGame gpt:contentCausesImpact gpt:KoreanSoftPowerGrowth .
+gpt:Netflix gpt:influencesViewingBehavior gpt:GlobalBingeWatchingGrowth .
+gpt:Netflix gpt:causesImpact gpt:LocalTelevisionAudienceFragmentation .
+gpt:Netflix gpt:usesTechnology gpt:NetflixRecommendationEngine .
+gpt:NetflixRecommendationEngine gpt:recommendsContent gpt:SquidGame .
+gpt:Netflix gpt:regulatedBy gpt:EuropeanUnionMediaRegulator .
+gpt:EuropeanContentQuota gpt:appliesToPlatform gpt:Netflix .
+gpt:EuropeanContentQuota gpt:requiresLocalContent gpt:Netflix .
+gpt:Netflix gpt:competesWith gpt:DisneyPlus .
+gpt:Netflix gpt:competesWith gpt:BBCOne .
+gpt:Kan11 gpt:shapesPublicOpinionIn gpt:Israel .

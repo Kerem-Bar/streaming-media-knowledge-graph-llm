@@ -1,0 +1,136 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex:   <http://example.org/streaming#> .
+
+<http://example.org/streaming> a owl:Ontology ;
+    rdfs:label "Gemini Streaming Impact Ontology" .
+
+# --- Classes ---
+ex:MediaPlatform a owl:Class .
+ex:StreamingService a owl:Class ; rdfs:subClassOf ex:MediaPlatform .
+ex:GlobalStreamingService a owl:Class ; rdfs:subClassOf ex:StreamingService .
+ex:LocalStreamingService a owl:Class ; rdfs:subClassOf ex:StreamingService .
+ex:TraditionalOutlet a owl:Class ; rdfs:subClassOf ex:MediaPlatform .
+ex:CommercialTVChannel a owl:Class ; rdfs:subClassOf ex:TraditionalOutlet .
+ex:PublicBroadcaster a owl:Class ; rdfs:subClassOf ex:TraditionalOutlet .
+ex:CinemaChain a owl:Class ; rdfs:subClassOf ex:TraditionalOutlet .
+
+ex:ContentItem a owl:Class .
+ex:OriginalProduction a owl:Class ; rdfs:subClassOf ex:ContentItem .
+ex:LocalOriginalSeries a owl:Class ; rdfs:subClassOf ex:OriginalProduction .
+ex:GlobalOriginalFilm a owl:Class ; rdfs:subClassOf ex:OriginalProduction .
+ex:LicensedContent a owl:Class ; rdfs:subClassOf ex:ContentItem .
+ex:AcquiredDramaSeries a owl:Class ; rdfs:subClassOf ex:LicensedContent .
+ex:LicensedDocumentary a owl:Class ; rdfs:subClassOf ex:LicensedContent .
+
+ex:DemographicGroup a owl:Class .
+ex:AgeCohort a owl:Class ; rdfs:subClassOf ex:DemographicGroup .
+ex:YouthCohort a owl:Class ; rdfs:subClassOf ex:AgeCohort .
+ex:AdultCohort a owl:Class ; rdfs:subClassOf ex:AgeCohort .
+ex:GeographicRegion a owl:Class ; rdfs:subClassOf ex:DemographicGroup .
+ex:MiddleEastRegion a owl:Class ; rdfs:subClassOf ex:GeographicRegion .
+ex:EuropeanRegion a owl:Class ; rdfs:subClassOf ex:GeographicRegion .
+
+ex:SocioBehavioralImpact a owl:Class .
+ex:PersonalBehavioralImpact a owl:Class ; rdfs:subClassOf ex:SocioBehavioralImpact .
+ex:SleepDisruption a owl:Class ; rdfs:subClassOf ex:PersonalBehavioralImpact .
+ex:SocialIsolation a owl:Class ; rdfs:subClassOf ex:PersonalBehavioralImpact .
+ex:PublicCulturalShift a owl:Class ; rdfs:subClassOf ex:SocioBehavioralImpact .
+ex:DeclineInReading a owl:Class ; rdfs:subClassOf ex:PublicCulturalShift .
+ex:CinemaAbandonment a owl:Class ; rdfs:subClassOf ex:PublicCulturalShift .
+
+ex:GeopoliticalFactor a owl:Class .
+ex:RegulatoryPolicy a owl:Class ; rdfs:subClassOf ex:GeopoliticalFactor .
+ex:StateCensorship a owl:Class ; rdfs:subClassOf ex:RegulatoryPolicy .
+ex:LocalContentQuota a owl:Class ; rdfs:subClassOf ex:RegulatoryPolicy .
+ex:CulturalConflict a owl:Class ; rdfs:subClassOf ex:GeopoliticalFactor .
+ex:DiplomaticTension a owl:Class ; rdfs:subClassOf ex:CulturalConflict .
+
+# --- Object Properties ---
+ex:producesContent a owl:ObjectProperty ; rdfs:domain ex:MediaPlatform ; rdfs:range ex:ContentItem .
+ex:isProducedBy a owl:ObjectProperty ; rdfs:domain ex:ContentItem ; rdfs:range ex:MediaPlatform .
+ex:targetsDemographic a owl:ObjectProperty ; rdfs:domain ex:ContentItem ; rdfs:range ex:DemographicGroup .
+ex:isWatchedBy a owl:ObjectProperty ; rdfs:domain ex:ContentItem ; rdfs:range ex:DemographicGroup .
+ex:causesImpact a owl:ObjectProperty ; rdfs:domain ex:MediaPlatform ; rdfs:range ex:SocioBehavioralImpact .
+ex:experiencesImpact a owl:ObjectProperty ; rdfs:domain ex:DemographicGroup ; rdfs:range ex:SocioBehavioralImpact .
+ex:isSubjectToPolicy a owl:ObjectProperty ; rdfs:domain ex:MediaPlatform ; rdfs:range ex:RegulatoryPolicy .
+ex:enforcesPolicy a owl:ObjectProperty ; rdfs:domain ex:GeographicRegion ; rdfs:range ex:RegulatoryPolicy .
+ex:restrictsContent a owl:ObjectProperty ; rdfs:domain ex:StateCensorship ; rdfs:range ex:ContentItem .
+ex:mandatesQuotaFor a owl:ObjectProperty ; rdfs:domain ex:LocalContentQuota ; rdfs:range ex:StreamingService .
+ex:triggersConflict a owl:ObjectProperty ; rdfs:domain ex:ContentItem ; rdfs:range ex:CulturalConflict .
+ex:competesWith a owl:ObjectProperty ; rdfs:domain ex:StreamingService ; rdfs:range ex:TraditionalOutlet .
+ex:replacesActivity a owl:ObjectProperty ; rdfs:domain ex:PersonalBehavioralImpact ; rdfs:range ex:PublicCulturalShift .
+ex:isDistributedIn a owl:ObjectProperty ; rdfs:domain ex:ContentItem ; rdfs:range ex:GeographicRegion .
+ex:influencesOpinionOf a owl:ObjectProperty ; rdfs:domain ex:ContentItem ; rdfs:range ex:DemographicGroup .
+ex:opposesPlatform a owl:ObjectProperty ; rdfs:domain ex:CulturalConflict ; rdfs:range ex:StreamingService .
+ex:supportsPlatform a owl:ObjectProperty ; rdfs:domain ex:CulturalConflict ; rdfs:range ex:StreamingService .
+ex:originatesFrom a owl:ObjectProperty ; rdfs:domain ex:ContentItem ; rdfs:range ex:GeographicRegion .
+ex:correlatesWith a owl:ObjectProperty ; rdfs:domain ex:SleepDisruption ; rdfs:range ex:SocialIsolation .
+ex:adaptsStoryFrom a owl:ObjectProperty ; rdfs:domain ex:OriginalProduction ; rdfs:range ex:ContentItem .
+
+# --- Data Properties ---
+ex:title a owl:DatatypeProperty ; rdfs:domain ex:ContentItem ; rdfs:range xsd:string .
+ex:releaseYear a owl:DatatypeProperty ; rdfs:domain ex:ContentItem ; rdfs:range xsd:integer .
+ex:durationMinutes a owl:DatatypeProperty ; rdfs:domain ex:ContentItem ; rdfs:range xsd:integer .
+ex:primaryLanguage a owl:DatatypeProperty ; rdfs:domain ex:ContentItem ; rdfs:range xsd:string .
+ex:imdbRating a owl:DatatypeProperty ; rdfs:domain ex:ContentItem ; rdfs:range xsd:float .
+ex:isOriginal a owl:DatatypeProperty ; rdfs:domain ex:ContentItem ; rdfs:range xsd:boolean .
+ex:episodesCount a owl:DatatypeProperty ; rdfs:domain ex:LocalOriginalSeries ; rdfs:range xsd:integer .
+ex:seasonsCount a owl:DatatypeProperty ; rdfs:domain ex:LocalOriginalSeries ; rdfs:range xsd:integer .
+ex:platformName a owl:DatatypeProperty ; rdfs:domain ex:MediaPlatform ; rdfs:range xsd:string .
+ex:launchYear a owl:DatatypeProperty ; rdfs:domain ex:MediaPlatform ; rdfs:range xsd:integer .
+ex:monthlySubscriptionFeeUSD a owl:DatatypeProperty ; rdfs:domain ex:StreamingService ; rdfs:range xsd:float .
+ex:subscriberCountMillions a owl:DatatypeProperty ; rdfs:domain ex:StreamingService ; rdfs:range xsd:float .
+ex:minAgeRequirement a owl:DatatypeProperty ; rdfs:domain ex:YouthCohort ; rdfs:range xsd:integer .
+ex:maxAgeRequirement a owl:DatatypeProperty ; rdfs:domain ex:YouthCohort ; rdfs:range xsd:integer .
+ex:populationSize a owl:DatatypeProperty ; rdfs:domain ex:GeographicRegion ; rdfs:range xsd:long .
+ex:isContentBlocked a owl:DatatypeProperty ; rdfs:domain ex:StateCensorship ; rdfs:range xsd:boolean .
+ex:requiredQuotaPercentage a owl:DatatypeProperty ; rdfs:domain ex:LocalContentQuota ; rdfs:range xsd:float .
+ex:severityScale a owl:DatatypeProperty ; rdfs:domain ex:SleepDisruption ; rdfs:range xsd:integer .
+ex:dailyAverageHoursSpent a owl:DatatypeProperty ; rdfs:domain ex:PersonalBehavioralImpact ; rdfs:range xsd:float .
+ex:annualTicketSalesDropPercent a owl:DatatypeProperty ; rdfs:domain ex:CinemaAbandonment ; rdfs:range xsd:float .
+
+# --- Instances & Triples ---
+ex:Netflix a ex:GlobalStreamingService .
+ex:YesPlus a ex:LocalStreamingService .
+ex:Channel12_Israel a ex:CommercialTVChannel .
+ex:CinemaCity a ex:CinemaChain .
+ex:Fauda_Series a ex:LocalOriginalSeries .
+ex:SquidGame_Series a ex:GlobalOriginalFilm .
+ex:Friends_Series a ex:AcquiredDramaSeries .
+ex:TheSocialDilemma_Doc a ex:LicensedDocumentary .
+ex:Youth_Cohort_18_25 a ex:YouthCohort .
+ex:Adults_Cohort_50_Plus a ex:AdultCohort .
+ex:Middle_East_Region a ex:MiddleEastRegion .
+ex:European_Union_Region a ex:EuropeanRegion .
+ex:Binge_Sleep_Loss a ex:SleepDisruption .
+ex:Teen_Isolation a ex:SocialIsolation .
+ex:Youth_Reading_Drop a ex:DeclineInReading .
+ex:Movie_Theater_Decline a ex:CinemaAbandonment .
+ex:Turkish_State_Censorship a ex:StateCensorship .
+ex:EU_30Percent_Quota_Directive a ex:LocalContentQuota .
+ex:Diplomatic_Row_Fauda a ex:DiplomaticTension .
+ex:Scorsese_Cinema_Debate a ex:CulturalConflict .
+
+ex:Netflix ex:producesContent ex:Fauda_Series .
+ex:Netflix ex:producesContent ex:SquidGame_Series .
+ex:Netflix ex:competesWith ex:Channel12_Israel .
+ex:Netflix ex:competesWith ex:CinemaCity .
+ex:Fauda_Series ex:originatesFrom ex:Middle_East_Region .
+ex:Fauda_Series ex:isWatchedBy ex:Youth_Cohort_18_25 .
+ex:Fauda_Series ex:triggersConflict ex:Diplomatic_Row_Fauda .
+ex:Turkish_State_Censorship ex:restrictsContent ex:Fauda_Series .
+ex:Middle_East_Region ex:enforcesPolicy ex:Turkish_State_Censorship .
+ex:European_Union_Region ex:enforcesPolicy ex:EU_30Percent_Quota_Directive .
+ex:EU_30Percent_Quota_Directive ex:mandatesQuotaFor ex:Netflix .
+ex:SquidGame_Series ex:targetsDemographic ex:Youth_Cohort_18_25 .
+ex:Netflix ex:causesImpact ex:Binge_Sleep_Loss .
+ex:Youth_Cohort_18_25 ex:experiencesImpact ex:Binge_Sleep_Loss .
+ex:Binge_Sleep_Loss ex:correlatesWith ex:Teen_Isolation .
+ex:Youth_Cohort_18_25 ex:experiencesImpact ex:Youth_Reading_Drop .
+ex:Netflix ex:causesImpact ex:Movie_Theater_Decline .
+ex:Movie_Theater_Decline ex:triggersConflict ex:Scorsese_Cinema_Debate .
+ex:Scorsese_Cinema_Debate ex:opposesPlatform ex:Netflix .
+ex:YesPlus ex:isDistributedIn ex:Middle_East_Region .

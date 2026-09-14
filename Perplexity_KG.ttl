@@ -1,0 +1,151 @@
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix px:   <http://example.org/perplexity#> .
+
+<http://example.org/perplexity> a owl:Ontology ;
+    rdfs:label "Perplexity Streaming Governance & Tech Ontology" .
+
+# --- Classes ---
+px:MediaPlatform a owl:Class .
+px:StreamingPlatform a owl:Class ; rdfs:subClassOf px:MediaPlatform .
+px:SubscriptionStreamingPlatform a owl:Class ; rdfs:subClassOf px:StreamingPlatform .
+px:AdSupportedStreamingPlatform a owl:Class ; rdfs:subClassOf px:StreamingPlatform .
+px:TraditionalMediaOutlet a owl:Class ; rdfs:subClassOf px:MediaPlatform .
+px:BroadcastTelevisionChannel a owl:Class ; rdfs:subClassOf px:TraditionalMediaOutlet .
+px:PrintNewspaper a owl:Class ; rdfs:subClassOf px:TraditionalMediaOutlet .
+px:RadioStation a owl:Class ; rdfs:subClassOf px:TraditionalMediaOutlet .
+
+px:MediaContent a owl:Class .
+px:EntertainmentContent a owl:Class ; rdfs:subClassOf px:MediaContent .
+px:StreamingOriginalSeries a owl:Class ; rdfs:subClassOf px:EntertainmentContent .
+px:LicensedFilm a owl:Class ; rdfs:subClassOf px:EntertainmentContent .
+px:InformationContent a owl:Class ; rdfs:subClassOf px:MediaContent .
+px:TVNewsProgram a owl:Class ; rdfs:subClassOf px:InformationContent .
+px:OpinionArticle a owl:Class ; rdfs:subClassOf px:InformationContent .
+
+px:AudienceSegment a owl:Class .
+px:DemographicGroup a owl:Class ; rdfs:subClassOf px:AudienceSegment .
+px:AgeCohort a owl:Class ; rdfs:subClassOf px:DemographicGroup .
+px:SocioEconomicGroup a owl:Class ; rdfs:subClassOf px:DemographicGroup .
+px:ViewingBehaviorProfile a owl:Class ; rdfs:subClassOf px:AudienceSegment .
+px:BingeWatcherProfile a owl:Class ; rdfs:subClassOf px:ViewingBehaviorProfile .
+px:CasualViewerProfile a owl:Class ; rdfs:subClassOf px:ViewingBehaviorProfile .
+
+px:Impact a owl:Class .
+px:CulturalImpact a owl:Class ; rdfs:subClassOf px:Impact .
+px:CulturalHomogenizationImpact a owl:Class ; rdfs:subClassOf px:CulturalImpact .
+px:CulturalDiversificationImpact a owl:Class ; rdfs:subClassOf px:CulturalImpact .
+px:BehavioralImpact a owl:Class ; rdfs:subClassOf px:Impact .
+px:ViewingHabitChangeImpact a owl:Class ; rdfs:subClassOf px:BehavioralImpact .
+px:PoliticalEngagementImpact a owl:Class ; rdfs:subClassOf px:BehavioralImpact .
+px:GeopoliticalImpact a owl:Class ; rdfs:subClassOf px:Impact .
+px:SoftPowerImpact a owl:Class ; rdfs:subClassOf px:GeopoliticalImpact .
+px:RegulatoryTensionImpact a owl:Class ; rdfs:subClassOf px:GeopoliticalImpact .
+
+px:GovernanceAndPolicy a owl:Class .
+px:MediaRegulationPolicy a owl:Class ; rdfs:subClassOf px:GovernanceAndPolicy .
+px:StreamingRegulationPolicy a owl:Class ; rdfs:subClassOf px:MediaRegulationPolicy .
+px:BroadcastingRegulationPolicy a owl:Class ; rdfs:subClassOf px:MediaRegulationPolicy .
+px:PlatformGovernanceModel a owl:Class ; rdfs:subClassOf px:GovernanceAndPolicy .
+px:AlgorithmTransparencyPolicy a owl:Class ; rdfs:subClassOf px:PlatformGovernanceModel .
+
+px:TechnologicalFeature a owl:Class .
+px:RecommendationAlgorithm a owl:Class ; rdfs:subClassOf px:TechnologicalFeature .
+px:CollaborativeFilteringAlgorithm a owl:Class ; rdfs:subClassOf px:RecommendationAlgorithm .
+px:ContentPromotionAlgorithm a owl:Class ; rdfs:subClassOf px:RecommendationAlgorithm .
+
+px:Country a owl:Class .
+px:OriginCountry a owl:Class ; rdfs:subClassOf px:Country .
+px:ContentOriginCountry a owl:Class ; rdfs:subClassOf px:OriginCountry .
+px:MarketCountry a owl:Class ; rdfs:subClassOf px:Country .
+px:TargetMarketCountry a owl:Class ; rdfs:subClassOf px:MarketCountry .
+
+# --- Object Properties ---
+px:platformDistributesContent a owl:ObjectProperty ; rdfs:domain px:StreamingPlatform ; rdfs:range px:MediaContent .
+px:traditionalOutletBroadcastsContent a owl:ObjectProperty ; rdfs:domain px:TraditionalMediaOutlet ; rdfs:range px:MediaContent .
+px:contentProducedByPlatform a owl:ObjectProperty ; rdfs:domain px:MediaContent ; rdfs:range px:MediaPlatform .
+px:contentTargetsAudienceSegment a owl:ObjectProperty ; rdfs:domain px:MediaContent ; rdfs:range px:AudienceSegment .
+px:audienceConsumesContent a owl:ObjectProperty ; rdfs:domain px:AudienceSegment ; rdfs:range px:MediaContent .
+px:audiencePrefersPlatform a owl:ObjectProperty ; rdfs:domain px:AudienceSegment ; rdfs:range px:MediaPlatform .
+px:impactAffectsAudienceSegment a owl:ObjectProperty ; rdfs:domain px:Impact ; rdfs:range px:AudienceSegment .
+px:impactObservedInCountry a owl:ObjectProperty ; rdfs:domain px:Impact ; rdfs:range px:Country .
+px:contentSetInCountry a owl:ObjectProperty ; rdfs:domain px:MediaContent ; rdfs:range px:Country .
+px:platformOperatesInMarketCountry a owl:ObjectProperty ; rdfs:domain px:StreamingPlatform ; rdfs:range px:MarketCountry .
+px:contentOriginatesFromCountry a owl:ObjectProperty ; rdfs:domain px:MediaContent ; rdfs:range px:OriginCountry .
+px:regulationAppliesToPlatform a owl:ObjectProperty ; rdfs:domain px:MediaRegulationPolicy ; rdfs:range px:MediaPlatform .
+px:regulationOriginCountry a owl:ObjectProperty ; rdfs:domain px:MediaRegulationPolicy ; rdfs:range px:OriginCountry .
+px:policyRespondsToImpact a owl:ObjectProperty ; rdfs:domain px:MediaRegulationPolicy ; rdfs:range px:Impact .
+px:platformImplementsAlgorithm a owl:ObjectProperty ; rdfs:domain px:StreamingPlatform ; rdfs:range px:RecommendationAlgorithm .
+px:algorithmShapesBehavioralImpact a owl:ObjectProperty ; rdfs:domain px:RecommendationAlgorithm ; rdfs:range px:BehavioralImpact .
+px:algorithmPersonalizesForAudience a owl:ObjectProperty ; rdfs:domain px:RecommendationAlgorithm ; rdfs:range px:AudienceSegment .
+px:softPowerDirectedAtCountry a owl:ObjectProperty ; rdfs:domain px:SoftPowerImpact ; rdfs:range px:MarketCountry .
+px:traditionalOutletCompetesWithPlatform a owl:ObjectProperty ; rdfs:domain px:TraditionalMediaOutlet ; rdfs:range px:StreamingPlatform .
+px:platformGovernedByModel a owl:ObjectProperty ; rdfs:domain px:MediaPlatform ; rdfs:range px:PlatformGovernanceModel .
+
+# --- Data Properties ---
+px:platformName a owl:DatatypeProperty ; rdfs:domain px:MediaPlatform ; rdfs:range xsd:string .
+px:launchYear a owl:DatatypeProperty ; rdfs:domain px:MediaPlatform ; rdfs:range xsd:integer .
+px:headquartersLocation a owl:DatatypeProperty ; rdfs:domain px:MediaPlatform ; rdfs:range xsd:string .
+px:subscriberCount a owl:DatatypeProperty ; rdfs:domain px:StreamingPlatform ; rdfs:range xsd:integer .
+px:averageWatchTimePerDay a owl:DatatypeProperty ; rdfs:domain px:StreamingPlatform ; rdfs:range xsd:float .
+px:isGlobalService a owl:DatatypeProperty ; rdfs:domain px:StreamingPlatform ; rdfs:range xsd:boolean .
+px:channelName a owl:DatatypeProperty ; rdfs:domain px:BroadcastTelevisionChannel ; rdfs:range xsd:string .
+px:circulationVolume a owl:DatatypeProperty ; rdfs:domain px:PrintNewspaper ; rdfs:range xsd:integer .
+px:radioFrequencyMHz a owl:DatatypeProperty ; rdfs:domain px:RadioStation ; rdfs:range xsd:float .
+px:contentTitle a owl:DatatypeProperty ; rdfs:domain px:MediaContent ; rdfs:range xsd:string .
+px:releaseDate a owl:DatatypeProperty ; rdfs:domain px:MediaContent ; rdfs:range xsd:date .
+px:genreLabel a owl:DatatypeProperty ; rdfs:domain px:EntertainmentContent ; rdfs:range xsd:string .
+px:isOriginalProduction a owl:DatatypeProperty ; rdfs:domain px:StreamingOriginalSeries ; rdfs:range xsd:boolean .
+px:ageGroupLabel a owl:DatatypeProperty ; rdfs:domain px:AgeCohort ; rdfs:range xsd:string .
+px:incomeBracket a owl:DatatypeProperty ; rdfs:domain px:SocioEconomicGroup ; rdfs:range xsd:string .
+px:bingeSessionLengthMinutes a owl:DatatypeProperty ; rdfs:domain px:BingeWatcherProfile ; rdfs:range xsd:integer .
+px:policyName a owl:DatatypeProperty ; rdfs:domain px:MediaRegulationPolicy ; rdfs:range xsd:string .
+px:enforcementStartDate a owl:DatatypeProperty ; rdfs:domain px:MediaRegulationPolicy ; rdfs:range xsd:date .
+px:impactIntensityScore a owl:DatatypeProperty ; rdfs:domain px:Impact ; rdfs:range xsd:float .
+px:cosmopolitanismIndex a owl:DatatypeProperty ; rdfs:domain px:AudienceSegment ; rdfs:range xsd:float .
+
+# --- Instances & Revised Triples ---
+px:NetflixPlatform a px:SubscriptionStreamingPlatform .
+px:DisneyPlusPlatform a px:SubscriptionStreamingPlatform .
+px:YouTubePlatform a px:AdSupportedStreamingPlatform .
+px:Kan11Channel a px:BroadcastTelevisionChannel .
+px:HaaretzPrintEdition a px:PrintNewspaper .
+px:BBCOneChannel a px:BroadcastTelevisionChannel .
+px:SquidGameSeriesContent a px:StreamingOriginalSeries .
+px:FaudaSeriesContent a px:StreamingOriginalSeries .
+px:EveningNewsBBCProgram a px:TVNewsProgram .
+px:HaaretzOpinionArticleOnline a px:OpinionArticle .
+px:IsraeliYoungAdults18to34Group a px:AgeCohort .
+px:GlobalMiddleClassViewersGroup a px:SocioEconomicGroup .
+px:HeavyBingeWatchersClusterProfile a px:BingeWatcherProfile .
+px:NetflixCulturalHomogenizationGlobalImpact a px:CulturalHomogenizationImpact .
+px:NetflixCulturalDiversificationIsraelImpact a px:CulturalDiversificationImpact .
+px:StreamingSoftPowerUSImpact a px:SoftPowerImpact .
+px:EUAVMSDStreamingPolicy a px:StreamingRegulationPolicy .
+px:IsraelBroadcastingRegulationPolicy a px:BroadcastingRegulationPolicy .
+px:NetflixMainRecommendationAlgorithm a px:CollaborativeFilteringAlgorithm .
+px:UnitedStatesOriginCountryInstance a px:ContentOriginCountry .
+
+px:NetflixPlatform px:platformDistributesContent px:SquidGameSeriesContent .
+px:YouTubePlatform px:traditionalOutletBroadcastsContent px:HaaretzOpinionArticleOnline .
+px:BBCOneChannel px:contentProducedByPlatform px:EveningNewsBBCProgram .
+px:HaaretzPrintEdition px:contentTargetsAudienceSegment px:IsraeliYoungAdults18to34Group .
+px:HeavyBingeWatchersClusterProfile px:audienceConsumesContent px:SquidGameSeriesContent .
+px:GlobalMiddleClassViewersGroup px:audiencePrefersPlatform px:NetflixPlatform .
+px:NetflixCulturalHomogenizationGlobalImpact px:impactAffectsAudienceSegment px:GlobalMiddleClassViewersGroup .
+px:NetflixCulturalDiversificationIsraelImpact px:impactObservedInCountry px:UnitedStatesOriginCountryInstance .
+px:FaudaSeriesContent px:contentSetInCountry px:UnitedStatesOriginCountryInstance .
+px:NetflixPlatform px:platformOperatesInMarketCountry px:UnitedStatesOriginCountryInstance .
+px:SquidGameSeriesContent px:contentOriginatesFromCountry px:UnitedStatesOriginCountryInstance .
+px:EUAVMSDStreamingPolicy px:regulationAppliesToPlatform px:NetflixPlatform .
+px:IsraelBroadcastingRegulationPolicy px:regulationOriginCountry px:UnitedStatesOriginCountryInstance .
+px:EUAVMSDStreamingPolicy px:policyRespondsToImpact px:NetflixCulturalHomogenizationGlobalImpact .
+px:NetflixPlatform px:platformImplementsAlgorithm px:NetflixMainRecommendationAlgorithm .
+px:NetflixMainRecommendationAlgorithm px:algorithmShapesBehavioralImpact px:ViewingHabitChangeImpact .
+px:NetflixMainRecommendationAlgorithm px:algorithmPersonalizesForAudience px:IsraeliYoungAdults18to34Group .
+px:StreamingSoftPowerUSImpact px:softPowerDirectedAtCountry px:UnitedStatesOriginCountryInstance .
+px:Kan11Channel px:traditionalOutletCompetesWithPlatform px:NetflixPlatform .
+px:NetflixPlatform px:platformGovernedByModel px:AlgorithmTransparencyPolicy .
