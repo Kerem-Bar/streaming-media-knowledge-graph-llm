@@ -80,7 +80,7 @@ As explored in **Part 4** of `Knowledge Graph Final Project - Netflix.pdf` and *
 
 ### Figure 3.3: ChatGPT Knowledge Graph
 <p align="center">
-  <img src="ChatGPT_KG.png" width="900">
+  <img src="ChatGPT_KG.png" width="750">
 </p>
 <p align="center"><em>21 core nodes, 19 key relationships (Soft Power & Global Scope).</em></p>
 ---
