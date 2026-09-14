@@ -42,7 +42,9 @@ As documented in **Part 1** and **Part 2** of `Knowledge Graph Final Project - N
 Each model was required to enforce strict ontological criteria: a 3-level IS-A class hierarchy, at least 20 classes and sub-classes, 20 Data Properties, 20 Object Properties, 20 specific instances, and 20 Knowledge Graph triples, with execution results comparing across the three architectures as follows:
 
 * **Gemini (Model 1):** Maintained precise single-turn adherence to all numeric and taxonomic constraints without scope creep, producing a balanced, ready-to-implement baseline knowledge graph containing exactly 23 classes and sub-classes organized across 5 core main branches.
+  
 * **Perplexity / Sonar 2 (Model 2):** Highlighted the necessity of iterative prompt engineering. Its initial generation comprised 23 classes and sub-classes structured across 7 main branches, but suffered from a *Predicate Redundancy Error* (repeatedly reusing `platformDistributesContent`). Since a knowledge graph requires diverse relationships to properly analyze multi-faceted geopolitical and social impacts, this was successfully resolved by using a targeted negative constraint in a second prompt ("do not repeat any object property") to ensure relational richness.
+  
 * **ChatGPT (Model 3):** Generated an expansive, research-grade knowledge graph exceeding 70 classes and sub-classes across 7 main branches, featuring advanced OWL constraints, 35 instances, and 50 triples. However, this exhibited over-generation, significantly exceeding the scope (incorporating unrequested institutional actors and concepts), depth (reaching 4 levels deep instead of the required 3), and strict structural boundaries originally requested in the standardized initial prompt.
 ---
 
