@@ -72,7 +72,7 @@ As explored in **Part 4** of `Knowledge Graph Final Project - Netflix.pdf` and *
     <img src="Gemini_KG.png" width="100%" alt="Gemini Knowledge Graph">
   </a>
 </p>
-<p align="center"><em>20 nodes, 20 relationships (Censorship & Behavioral Focus). (<a href="Gemini_KG.png" target="_blank">View full-size image</a>)</em></p>
+<p align="center"><em>20 nodes, 20 relationships (Censorship & Behavioral Focus). (<a href="Gemini_KG.png" target="_blank">Click here to open full-size image in a new tab</a>)</em></p>
 
 ### Figure 3.2: Perplexity Knowledge Graph
 <p align="center">
@@ -80,7 +80,7 @@ As explored in **Part 4** of `Knowledge Graph Final Project - Netflix.pdf` and *
     <img src="Perplexity_KG.png" width="100%" alt="Perplexity Knowledge Graph">
   </a>
 </p>
-<p align="center"><em>22 nodes, 20 relationships (Algorithmic & Policy Focus). (<a href="Perplexity_KG.png" target="_blank">View full-size image</a>)</em></p>
+<p align="center"><em>22 nodes, 20 relationships (Algorithmic & Policy Focus). (<a href="Perplexity_KG.png" target="_blank">Click here to open full-size image in a new tab</a>)</em></p>
 
 ### Figure 3.3: ChatGPT Knowledge Graph
 <p align="center">
@@ -88,8 +88,7 @@ As explored in **Part 4** of `Knowledge Graph Final Project - Netflix.pdf` and *
     <img src="ChatGPT_KG.png" width="100%" alt="ChatGPT Knowledge Graph">
   </a>
 </p>
-<p align="center"><em>21 core nodes, 19 key relationships (Soft Power & Global Scope). (<a href="ChatGPT_KG.png" target="_blank">View full-size image</a>)</em></p>
----
+<p align="center"><em>21 core nodes, 19 key relationships (Soft Power & Global Scope). (<a href="ChatGPT_KG.png" target="_blank">Click here to open full-size image in a new tab</a>)</em></p>
 
 ## 🛠️ Tech Stack & Dependencies
 
