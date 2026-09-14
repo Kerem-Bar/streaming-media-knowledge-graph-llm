@@ -22,16 +22,17 @@ The complete project documentation and implementation details are divided into t
 ```text
 streaming-media-knowledge-graph-llm/
 │── README.md                        # Detailed Repository Architecture & Research Findings
-│── Gemini_KG.ttl                    # Gemini Baseline Ontology & Triples (Appendix A)
-│── Perplexity_KG.ttl                # Perplexity Fine-Tuned Ontology & Triples (Appendix B)
-│── ChatGPT_KG.ttl                   # ChatGPT Expanded Ontology & Triples (Appendix C)
-│── Knowledge Graph Final Project.pdf # Main academic research report (Parts 1-4)
-│── Appendices.pdf                   # Comprehensive appendices (Models, Cypher, AI Free-Text, SPARQL)
-│── Gemini_KG.png                    # Gemini Knowledge Graph Topology (Figure 3.1)
-│── Perplexity_KG.png                # Perplexity Knowledge Graph Topology (Figure 3.2)
-└── ChatGPT_KG.png                   # ChatGPT Knowledge Graph Topology (Figure 3.3)
-
-```
+│── /ontologies                      # Semantic Web Representations (.ttl files)
+│   ├── Gemini_KG.ttl                # Gemini Baseline Ontology & Triples (Appendix A)
+│   ├── Perplexity_KG.ttl            # Perplexity Fine-Tuned Ontology & Triples (Appendix B)
+│   └── ChatGPT_KG.ttl               # ChatGPT Expanded Ontology & Triples (Appendix C)
+│── /documentation                   # Core Project Files
+│   ├── Knowledge Graph Final Project.pdf # Main academic research report (Parts 1-4)
+│   └── Appendices.pdf               # Comprehensive appendices (Models, Cypher, AI Free-Text, SPARQL)
+└── /images                          # High-Resolution Neo4j Visualizations
+    ├── Gemini_KG.png                # Gemini Knowledge Graph Topology (Figure 3.1)
+    ├── Perplexity_KG.png            # Perplexity Knowledge Graph Topology (Figure 3.2)
+    └── ChatGPT_KG.png               # ChatGPT Knowledge Graph Topology (Figure 3.3)
 
 ---
 
