@@ -121,12 +121,14 @@ As explored in **Part 4** of `Knowledge Graph Final Project - Netflix.pdf` and *
 ```bash
 git clone https://github.com/Kerem-Bar/streaming-media-knowledge-graph-llm.git
 cd streaming-media-knowledge-graph-llm
-
 ```
+
 
 2. Explore the Knowledge Graphs and Documentation:
 * Review the Turtle files (`.ttl`) and visualizations (`.png`) for Gemini, Perplexity, and ChatGPT.
 * Access the academic reports (`Knowledge Graph Final Project - Netflix.pdf` and `Appendices - Netflix.pdf`) for the complete research findings and SPARQL benchmarking results.
+
+
 
 
 
