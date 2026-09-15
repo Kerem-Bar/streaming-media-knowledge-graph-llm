@@ -50,7 +50,7 @@ Each model was required to enforce strict ontological criteria: a 3-level IS-A c
 
 ## 🔍 Query Retrieval: Structured Cypher vs. AI Free-Text
 
-As detailed in **Part 3** of `Knowledge Graph Final Project - Netflix.pdf` and demonstrated in Appendices **D & E** of `Appendices - Netflix.pdf`, multi-hop competency questions, such as evaluating *"Identifying geographic regions, governing authorities, and regulatory policies enforcing censorship or quotas on streaming services"*, were evaluated across two parallel channels, manifesting either as **deterministic matches** (where graph paths and semantic text fully align) or **zero records / bounded precision** (where structural gaps cause Neo4j to return empty results while the AI maintains strict factual boundaries). Since each AI tool generated a unique ontology with its own structural topology, the corresponding Cypher queries were adapted to match each model's distinct schema:
+As detailed in **Part 3** of `Knowledge Graph Final Project - Netflix.pdf` and demonstrated in **Appendices D & E** of `Appendices - Netflix.pdf`, multi-hop competency questions, such as evaluating *"Identifying geographic regions, governing authorities, and regulatory policies enforcing censorship or quotas on streaming services"*, were evaluated across two parallel channels, manifesting either as **deterministic matches** (where graph paths and semantic text fully align) or **zero records / bounded precision** (where structural gaps cause Neo4j to return empty results while the AI maintains strict factual boundaries). Since each AI tool generated a unique ontology with its own structural topology, the corresponding Cypher queries were adapted to match each model's distinct schema:
 
 * **Scenario A: Successful Multi-Hop Traversal (Deterministic Match)**  
   When an ontology is precisely structured, queries execute continuous multi-hop traversals across interconnected nodes (A -> B -> C -> D). In Gemini's model, this is demonstrated through its four-node path:  
@@ -65,7 +65,7 @@ As detailed in **Part 3** of `Knowledge Graph Final Project - Netflix.pdf` and d
 
 ## 🌍 Wikidata SPARQL Benchmarking
 
-As explored in Part 4 of `Knowledge Graph Final Project - Netflix.pdf` and Appendix F of `Appendices - Netflix.pdf`, closed-world findings were benchmarked against the open-world Wikidata ecosystem via the Wikidata Query Service. To establish structural alignment with the Neo4j analyses, our core research goals and competency questions were mapped and executed across three distinct SPARQL queries:
+As explored in **Part 4** of `Knowledge Graph Final Project - Netflix.pdf` and **Appendix F** of `Appendices - Netflix.pdf`, closed-world findings were benchmarked against the open-world Wikidata ecosystem via the Wikidata Query Service. To establish structural alignment with the Neo4j analyses, our core research goals and competency questions were mapped and executed across three distinct SPARQL queries:
 
 * **1. Cultural & Geopolitical Distribution (Query 1):**  
   * *Research Goal / Competency Focus:* Identify international television series originating outside the United States that are distributed globally by platforms like Netflix.  
