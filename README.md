@@ -119,7 +119,7 @@ As explored in **Part 4** of `Knowledge Graph Final Project - Netflix.pdf` and *
 1. Clone the repository and enter the directory:
 
 ```bash
-git clone [https://github.com/Kerem-Bar/streaming-media-knowledge-graph-llm.git](https://github.com/Kerem-Bar/streaming-media-knowledge-graph-llm.git)
+git clone https://github.com/Kerem-Bar/streaming-media-knowledge-graph-llm.git
 cd streaming-media-knowledge-graph-llm
 
 ```
