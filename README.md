@@ -113,13 +113,17 @@ As explored in **Part 4** of `Knowledge Graph Final Project - Netflix.pdf` and *
 * **Data Ecosystems:** Wikidata SPARQL Query Service
 
 ---
+
+
 ## 🚀 Getting Started & Usage
 
 To clone this repository and explore the knowledge graphs, TTL files, and project documentation locally, run the following command in your terminal:
 
 ```bash
 git clone [https://github.com/Kerem-Bar/streaming-media-knowledge-graph-llm.git](https://github.com/Kerem-Bar/streaming-media-knowledge-graph-llm.git)
+
 ---
+
 ## 👤 Author
 
 **Kerem Bar**
