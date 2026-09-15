@@ -50,7 +50,15 @@ Each model was required to enforce strict ontological criteria: a 3-level IS-A c
 
 ## 🔍 Query Retrieval: Structured Cypher vs. AI Free-Text
 
-As detailed in **Part 3** of `Knowledge Graph Final Project - Netflix.pdf` and demonstrated in **Appendices D & E** of `Appendices - Netflix.pdf`, multi-hop competency questions regarding content-driven conflicts, geopolitical regulations, and socio-behavioral impacts were evaluated across two parallel channels, manifesting either as **deterministic matches** (where graph paths and semantic text fully align) or **zero records / bounded precision** (where structural gaps cause Neo4j to return empty results while the AI maintains strict factual boundaries):
+As detailed in **Part 3** of 'Knowledge Graph Final Project - Netflix.pdf' and demonstrated in Appendices **D & E** of 'Appendices - Netflix.pdf', multi-hop competency questions were evaluated across two parallel channels. For example, focusing on Competency Question 2: Geopolitical Regulation & Content Restrictions (identifying geographic regions, governing authorities, and regulatory policies enforcing censorship or quotas on streaming services), these queries manifest either as **deterministic matches** (where graph paths and semantic text fully align) or **zero records / bounded precision** (where structural gaps cause Neo4j to return empty results while the AI maintains strict factual boundaries):
+
+* **Scenario A: Successful Multi-Hop Traversal (Deterministic Match)**  
+  When an ontology is precisely structured, queries execute continuous multi-hop traversals across interconnected nodes (A -> B -> C -> D). In Gemini's model, this is demonstrated through its four-node path:  
+  `Geographic_Region` -> `State_Censorship` -> `Content_Item` -> `Media_Platform`  
+  Neo4j successfully traverses this explicit path, yielding exact, deterministic records with zero deviation that align seamlessly with the AI's semantic free-text synthesis.
+
+* **Scenario B: Path Disconnection (Zero Records & Bounded Precision)**  
+  When an ontology suffers from structural gaps or disjoint schema paths where the multi-hop chain fails to bridge to the target node (`Country` -> `GovernanceAndPolicy` -> missing direct content-blocking links), the traversal breaks. This results in zero records returned by the closed-world Neo4j database. However, the AI's free-text synthesis demonstrates robust contextual understanding by pivoting to available platform-level directives present in the knowledge graph (e.g., `EU_AVMSD_Policy`) rather than hallucinating fictitious banned content items.
 
 * **Scenario A: Successful Multi-Hop Traversal (Deterministic Match)**  
   When an ontology is precisely structured, queries execute continuous multi-hop traversals across interconnected nodes (A -> B -> C -> D). In Gemini's model, this is demonstrated through its four-node path:  
