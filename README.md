@@ -65,14 +65,24 @@ As detailed in **Part 3** of `Knowledge Graph Final Project - Netflix.pdf` and d
 
 ## 🌍 Wikidata SPARQL Benchmarking
 
-As explored in **Part 4** of `Knowledge Graph Final Project - Netflix.pdf` and **Appendix F** of `Appendices - Netflix.pdf`, closed-world findings were benchmarked against the open-world Wikidata ecosystem via the Wikidata Query Service across three core axes:
+As explored in Part 4 of `Knowledge Graph Final Project - Netflix.pdf` and Appendix F of `Appendices - Netflix.pdf`, closed-world findings were benchmarked against the open-world Wikidata ecosystem via the Wikidata Query Service. To establish structural alignment with the Neo4j analyses, our core research goals and competency questions were mapped and executed across three distinct SPARQL queries:
 
-* **Cultural Distribution:** Contrasting corporate distribution and soft power in Neo4j against objective bibliographic metadata (country of origin, language) in Wikidata.
-* **Institutional Governance:** Contrasting active regulatory friction in closed graphs with formal legislative acts (AVMSD 2010, GDPR) in static legal ontologies.
-* **Behavioral Impact:** Contrasting causal algorithmic consequences mapped to demographic cohorts in Neo4j against disconnected medical and sociological taxonomies in Wikidata.
-  
-  > *Summary:* Closed-world Knowledge Graphs excel at subjective, narrative-driven causal modeling of controversy, whereas open-world knowledge bases (Wikidata) provide an objective, consensus-driven structural backbone for validating real-world entities and standards.
+* **1. Cultural & Geopolitical Distribution (Query 1):**  
+  * *Research Goal / Competency Focus:* Identify international television series originating outside the United States that are distributed globally by platforms like Netflix.  
+  * *Wikidata Execution:* Evaluated via SPARQL Query 1 (`wdt:P750` filtered by `wd:Q907311`), examining international series like *Squid Game* (South Korea) or *Money Heist* (Spain).  
+  * *Comparative Perspective:* While closed Neo4j models frame international content through the lens of strategic corporate distribution and national soft power, open-world Wikidata treats them as objective bibliographic entities defined by rigid administrative attributes (country of origin `wdt:P495` and original language `wdt:P364`).
 
+* **2. Institutional Governance & Regulation (Query 2):**  
+  * *Research Goal / Competency Focus:* Retrieve formal regulatory directives and market frameworks governing online platforms.  
+  * *Wikidata Execution:* Evaluated via SPARQL Query 2, targeting formal EU legislative acts such as the Audiovisual Media Services Directive (`AVMSD 2010`) and `GDPR` (`wd:Q56856283` and `wd:Q1172506`).  
+  * *Comparative Perspective:* While closed graphs model policies like the EU AVMSD as active regulatory friction and industry power struggles, Wikidata catalogs them as static, formal legislative legal acts issued by supranational authorities from a compliance-oriented standpoint.
+
+* **3. Behavioral & Health Impact (Query 3):**  
+  * *Research Goal / Competency Focus:* Map behavioral concepts and physiological conditions related to modern digital media consumption.  
+  * *Wikidata Execution:* Evaluated via SPARQL Query 3, mapping standardized medical and sociological taxonomies for `binge-watching` (`wd:Q15094181`) and `sleep disorder` (`wd:Q177190`).  
+  * *Comparative Perspective:* While Neo4j models behavioral outcomes like binge-watching or sleep disruption as direct causal consequences inflicted by platform algorithms on specific demographic cohorts, Wikidata treats them as disconnected, standardized medical and sociological taxonomical nodes devoid of corporate links.
+
+> *Summary:* Closed-world Knowledge Graphs excel at narrative-driven, subjective, and causal modeling of controversy and societal harm, whereas open-world knowledge bases (Wikidata) provide an objective, consensus-driven structural backbone that validates real-world facts.
 ---
 
 ## 📊 Visualizations Highlights
