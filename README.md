@@ -114,13 +114,21 @@ As explored in **Part 4** of `Knowledge Graph Final Project - Netflix.pdf` and *
 
 ---
 
+## 🚀 How to Run the Project
 
-## 🚀 Getting Started & Usage
-
-To clone this repository and explore the knowledge graphs, TTL files, and project documentation locally, run the following command in your terminal:
+1. Clone the repository and enter the directory:
 
 ```bash
 git clone [https://github.com/Kerem-Bar/streaming-media-knowledge-graph-llm.git](https://github.com/Kerem-Bar/streaming-media-knowledge-graph-llm.git)
+cd streaming-media-knowledge-graph-llm
+
+```
+
+2. Explore the Knowledge Graphs and Documentation:
+* Review the Turtle files (`.ttl`) and visualizations (`.png`) for Gemini, Perplexity, and ChatGPT.
+* Access the academic reports (`Knowledge Graph Final Project - Netflix.pdf` and `Appendices - Netflix.pdf`) for the complete research findings and SPARQL benchmarking results.
+
+
 
 ---
 
@@ -132,4 +140,3 @@ git clone [https://github.com/Kerem-Bar/streaming-media-knowledge-graph-llm.git]
 
 ```
 
-```
