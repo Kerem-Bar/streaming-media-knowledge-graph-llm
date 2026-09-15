@@ -79,8 +79,8 @@ As explored in **Part 4** of `Knowledge Graph Final Project - Netflix.pdf` and *
 
 * **3. Behavioral & Health Impact (Query 3):**  
   * *Research Goal / Competency Focus:* Map behavioral concepts and physiological conditions related to modern digital media consumption.  
-  * *Wikidata Execution:* Evaluated via SPARQL Query 3, mapping standardized medical and sociological taxonomies for `binge-watching` (`wd:Q15094181`) and `sleep disorder` (`wd:Q177190`).  
-  * *Comparative Perspective:* While Neo4j models behavioral outcomes like binge-watching or sleep disruption as direct causal consequences inflicted by platform algorithms on specific demographic cohorts, Wikidata treats them as disconnected, standardized medical and sociological taxonomical nodes devoid of corporate links.
+  * *Wikidata Execution:* Evaluated via SPARQL Query 3, mapping standardized medical and sociological taxonomies for *binge-watching* (`wd:Q15094181`) and *sleep disorder* (`wd:Q177190`).  
+  * *Comparative Perspective:* While closed Neo4j models frame behavioral outcomes like binge-watching or sleep disruption as direct causal consequences inflicted by platform algorithms on specific demographic cohorts, Wikidata treats them as disconnected, standardized medical and sociological taxonomical nodes devoid of corporate links. Wikidata provides the objective, neutral taxonomical definitions for these health and behavioral phenomena, yet remains entirely devoid of the algorithmic blame or platform-specific causality explicitly encoded in our closed graph.
 
 > *Summary:* Closed-world Knowledge Graphs excel at narrative-driven, subjective, and causal modeling of controversy and societal harm, whereas open-world knowledge bases (Wikidata) provide an objective, consensus-driven structural backbone that validates real-world facts.
 ---
