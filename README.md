@@ -65,7 +65,7 @@ As detailed in **Part 3** of `Knowledge Graph Final Project - Netflix.pdf` and d
 
 ## 🌍 Wikidata SPARQL Benchmarking
 
-As explored in **Part 4** of `Knowledge Graph Final Project - Netflix.pdf` and **Appendix F** of `Appendices - Netflix.pdf`, closed-world findings were benchmarked against the open-world Wikidata ecosystem via the Wikidata Query Service. To establish structural alignment with the Neo4j analyses, our core research goals and competency questions were mapped and executed across three distinct SPARQL queries:
+As explored in **Part 4** of `Knowledge Graph Final Project - Netflix.pdf` and **Appendix F** of `Appendices - Netflix.pdf`, closed-world findings were benchmarked against the open-world Wikidata ecosystem via the Wikidata Query Service. To establish structural alignment with the Neo4j analyses, the core research goals and competency questions were mapped and executed across three distinct SPARQL queries:
 
 * **1. Cultural & Geopolitical Distribution (Query 1):**  
   * *Research Goal / Competency Focus:* Identify international television series originating outside the United States that are distributed globally by platforms like Netflix.  
