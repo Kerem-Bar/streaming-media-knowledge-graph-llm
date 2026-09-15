@@ -75,7 +75,7 @@ As explored in **Part 4** of `Knowledge Graph Final Project - Netflix.pdf` and *
 * **2. Institutional Governance & Regulation (Query 2):**  
   * *Research Goal / Competency Focus:* Retrieve formal regulatory directives and market frameworks governing online platforms.  
   * *Wikidata Execution:* Evaluated via SPARQL Query 2, targeting formal EU legislative acts such as *Audiovisual Media Services Directive 2010* (`wd:Q56856283`) and *General Data Protection Regulation* (`wd:Q1172506`).  
-  * *Comparative Perspective:* While closed Neo4j graphs model these policies as active regulatory friction and dynamic industry power struggles designed to counter platform dominance, Wikidata catalogs them strictly as static, formal legislative acts issued by supranational authorities from a neutral, compliance-oriented standpoint. Wikidata confirms the legal existence of these directives, yet remains devoid of the strategic, conflict-driven regulatory narrative explicitly encoded in our closed graph.
+  * *Comparative Perspective:* While closed Neo4j graphs model these policies as active regulatory friction and dynamic industry power struggles designed to counter platform dominance, Wikidata catalogs them strictly as static, formal legislative acts issued by supranational authorities from a neutral, compliance-oriented standpoint. Wikidata confirms the legal existence of these directives, yet remains devoid of the strategic, conflict-driven regulatory narrative explicitly encoded in the closed graph.
 
 * **3. Behavioral & Health Impact (Query 3):**  
   * *Research Goal / Competency Focus:* Map behavioral concepts and physiological conditions related to modern digital media consumption.  
