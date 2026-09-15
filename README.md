@@ -59,6 +59,8 @@ As detailed in **Part 3** of `Knowledge Graph Final Project - Netflix.pdf` and d
 
 * **Scenario B: Path Disconnection (Zero Records & Bounded Precision)**  
   When an ontology suffers from structural gaps or disjoint schema paths where the multi-hop chain fails to bridge to the target node (`Country` -> `GovernanceAndPolicy` -> missing direct content-blocking links), the traversal breaks. This results in zero records returned by the closed-world Neo4j database. However, the AI's free-text synthesis demonstrates robust contextual understanding by pivoting to available platform-level directives present in the knowledge graph (e.g., `EU_AVMSD_Policy`) rather than hallucinating fictitious banned content items.
+
+  > *Summary:* While closed-world Neo4j queries provide strict mathematical determinism, they remain vulnerable to structural schema gaps, whereas AI free-text synthesis bridges these gaps safely through contextual grounding.
 ---
 
 ## 🌍 Wikidata SPARQL Benchmarking
