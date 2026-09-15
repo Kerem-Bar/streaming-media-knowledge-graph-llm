@@ -70,6 +70,8 @@ As explored in **Part 4** of `Knowledge Graph Final Project - Netflix.pdf` and *
 * **Cultural Distribution:** Contrasting corporate distribution and soft power in Neo4j against objective bibliographic metadata (country of origin, language) in Wikidata.
 * **Institutional Governance:** Contrasting active regulatory friction in closed graphs with formal legislative acts (AVMSD 2010, GDPR) in static legal ontologies.
 * **Behavioral Impact:** Contrasting causal algorithmic consequences mapped to demographic cohorts in Neo4j against disconnected medical and sociological taxonomies in Wikidata.
+  
+  > *Summary:* Closed-world Knowledge Graphs excel at subjective, narrative-driven causal modeling of controversy, whereas open-world knowledge bases (Wikidata) provide an objective, consensus-driven structural backbone for validating real-world entities and standards.
 
 ---
 
