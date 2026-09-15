@@ -70,7 +70,7 @@ As explored in **Part 4** of `Knowledge Graph Final Project - Netflix.pdf` and *
 * **1. Cultural & Geopolitical Distribution (Query 1):**  
   * *Research Goal / Competency Focus:* Identify international television series originating outside the United States that are distributed globally by platforms like Netflix.  
   * *Wikidata Execution:* Evaluated via SPARQL Query 1 (`wdt:P750` filtered by `wd:Q907311`), examining international series like *Squid Game* (South Korea) or *Money Heist* (Spain).  
-  * *Comparative Perspective:* While closed Neo4j models frame international content through the lens of strategic corporate distribution and national soft power, open-world Wikidata treats them as objective bibliographic entities defined by rigid administrative attributes (country of origin `wdt:P495` and original language `wdt:P364`).
+  * *Comparative Perspective:* While closed Neo4j models frame international content through the lens of strategic corporate distribution and national soft power, open-world Wikidata treats them as objective bibliographic entities defined by rigid administrative attributes (country of origin `wdt:P495` and original language `wdt:P364`).Wikidata successfully confirms the structural fact that Netflix distributes these non-US shows, yet remains entirely devoid of the political, cultural, or corporate strategy meaning that is explicitly encoded in the closed Neo4j graph.
 
 * **2. Institutional Governance & Regulation (Query 2):**  
   * *Research Goal / Competency Focus:* Retrieve formal regulatory directives and market frameworks governing online platforms.  
