@@ -44,6 +44,8 @@ Each model was required to enforce strict ontological criteria: a 3-level IS-A c
 * **Perplexity / Sonar 2 (Model 2):** Highlighted the necessity of iterative prompt engineering. Its initial generation comprised 23 classes and sub-classes structured across 7 main branches, maintaining a strict 3-level depth hierarchy, but suffered from a *Predicate Redundancy Error* (repeatedly reusing `platformDistributesContent`). Since a robust knowledge graph requires diverse relationships to properly model multi-dimensional cultural, geopolitical, and behavioral impacts, this structural limitation was successfully resolved using a targeted negative constraint in a second prompt ("do not repeat any object property") to ensure relational richness
   
 * **ChatGPT (Model 3):** Generated an expansive, research-grade knowledge graph exceeding 70 classes and sub-classes across 7 main branches, featuring advanced OWL constraints, 35 instances, and 50 triples. However, this exhibited *over-generation*, significantly going beyond the scope (incorporating unrequested institutional actors and concepts), depth (reaching 4 levels deep instead of the required 3), and strict structural boundaries originally requested in the standardized initial prompt.
+
+> *Summary:* Comparing the three tools reveals clear operational trade-offs: Gemini delivered the most precise and balanced single-turn baseline adhering strictly to all constraints; Perplexity demonstrated the necessity of iterative prompt engineering to overcome predicate redundancy; and ChatGPT provided research-grade depth and advanced OWL assets, though requiring strict scope management to prevent over-generation.
 ---
 
 ## 🔍 Query Retrieval: Structured Cypher vs. AI Free-Text
