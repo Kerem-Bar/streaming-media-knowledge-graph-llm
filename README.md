@@ -13,8 +13,6 @@ An academic research repository evaluating Generative AI models (Gemini, Perplex
 
 This project explores the capabilities and limitations of Large Language Models in automated ontology engineering and Knowledge Graph (KG) construction. Using the domain of global streaming platforms versus traditional media as a testbed, the study investigates how different LLMs handle structural taxonomic constraints, how structured database queries (**Neo4j Cypher**) compare to natural language AI responses, and how closed-world graph models contrast with open-world public data ecosystems (**Wikidata SPARQL**). 
 
-The complete project documentation and implementation details are divided into the main academic research report and accompanying appendices.
-
 ---
 
 ## 📁 Repository Structure
@@ -50,7 +48,9 @@ Each model was required to enforce strict ontological criteria: a 3-level IS-A c
 
 ## 🔍 Query Retrieval: Structured Cypher vs. AI Free-Text
 
-As detailed in **Part 3** of `Knowledge Graph Final Project - Netflix.pdf` and demonstrated in **Appendices D & E** of `Appendices - Netflix.pdf`, multi-hop competency questions, such as evaluating *"Identifying geographic regions, governing authorities, and regulatory policies enforcing censorship or quotas on streaming services"*, were evaluated across two parallel channels, manifesting either as **deterministic matches** (where graph paths and semantic text fully align) or **zero records / bounded precision** (where structural gaps cause Neo4j to return empty results while the AI maintains strict factual boundaries). Since each AI tool generated a unique ontology with its own structural topology, the corresponding Cypher queries were adapted to match each model's distinct schema:
+As detailed in **Part 3** of `Knowledge Graph Final Project - Netflix.pdf` and demonstrated in **Appendices D & E** of `Appendices - Netflix.pdf`, multi-hop competency questions were evaluated across two parallel channels comparing structured Neo4j queries against AI free-text responses. Since each AI tool generated a unique ontology with its own structural topology, the corresponding Cypher queries were adapted to match each model's distinct schema. This evaluation manifested either as **deterministic matches** (where graph paths and semantic text fully align) or **zero records / bounded precision** (where structural gaps cause Neo4j to return empty results while the AI maintains strict factual boundaries).
+
+To illustrate, consider the evaluation of the following competency question: "*Identifying geographic regions, governing authorities, and regulatory policies enforcing censorship or quotas on streaming services"*. Depending on the model's schema, this performance branches into two distinct scenarios:
 
 * **Scenario A: Successful Multi-Hop Traversal (Deterministic Match)**  
   When an ontology is precisely structured, queries execute continuous multi-hop traversals across interconnected nodes (A -> B -> C -> D). In Gemini's model, this is demonstrated through its four-node path:  
